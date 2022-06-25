@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="deskbord.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .val-box:hover {
+            transform: translate(0, -8px);
+        }
+
+        .newadd a span:hover {
+            transform: translate(0, -8px);
+
+        }
+
+        .drop-item .dropdown-toggle{
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+            
+        }
+
+         .drop-content{
+            box-shadow: 0 50px 50px rgb(0,0,0,.10);
+            transform: translateY(50px);
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+        }
+
+        .drop-item .drop-content::before{
+            
+            position: absolute;
+            left: 89%;
+            top: -7px;
+           
+            width: 14px;
+            height: 14px;
+            transform: translate(50%) rotate(45deg);
+        }
+    </style>
+</head>
+
+<body style="width: 100%;position:relative;display:flex ;" class="bg-gray-300 ">
+
+    <section id="menu"
+        class=" bg-blue-900  h-[100%] fixed top-0 left-[-270px] w-[270px] || md:bg-blue-900 md:transition md:duration-100 md:ease-in md:h-[100%] md:fixed md:top-0 md:left-[-270px] md:w-[270px] md:active:left-0 || xl:bg-blue-900 xl:h-[100%] xl:fixed xl:top-0 xl:left-0 xl:w-[300px]"
+        style="z-index: 1111; margin-top: 0px; padding: 0px 0px;">
+
+        <div
+            class="logo p-5 text-white text-2xl flex justify-between font-bold cursor-pointer ||  xl:text-center xl:text-2xl xl:p-5 xl:pt-10">
+            <a href="deskbord.html">SULTAN MOBILE</a>
+            <div id="  ">
+                <i id="close-btn" class="fa-solid fa-xmark  ||  || xl:hidden"></i>
+            </div>
+        </div>
+
+        <div id="item" class="item ml-0 mt-[20px] space-y-5  || xl:pl-0 xl:mt-[25px] xl:ml-0">
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-solid fa-house xl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="deskbord.html"
+                    class="   decoration-none text-xl ||">Deskbord</a>
+            </li>
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-solid fa-user  xl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="#" class=" decoration-none  text-xl ">Customers</a>
+            </li>
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-solid fa-history txl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="#" class=" decoration-none text-xl ">Report</a>
+            </li>
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-solid fa-user  xl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="about.html" class=" decoration-none  text-xl">About</a>
+            </li>
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-solid fa-phone  xl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="contect.html"
+                    class=" decoration-none  text-xl">Contect</a>
+            </li>
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-brands fa-whatsapp  xl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="#" class=" decoration-none  text-xl">Whatsapp</a>
+            </li>
+
+            <li
+                class=" list-none text-white hover:bg-blue-900 hover:text-white py-1  cursor-pointer border-white  border-l-2  border-transparent hover:border-l-white   || xl:text-gray-400  xl:hover:bg-blue-800 xl:py-4 xl:hover:text-white xl:transition xl:duration-100 xl:ease-in ">
+                <i class='fa-solid fa-plus  xl:text-center ml-[25px]  xl:text-xl xl:mr-[10px] xl:ml-[25px]'
+                    style="width:30px;height:30px;"></i><a href="#" class=" decoration-none text-xl ">Add New
+                    </a>
+            </li>
+
+          
+        </div>
+    </section>
+
+    <section id="interface"
+        class="  ml-0 relative inline-block transition duration-100 ease-ism || md:w-[100%] md:ml-0 md:relative md:inline-block md:transition md:duration-100 md:ease-in  || xl:w-[100%] xl:ml-[300px] xl:relative">
+        <div
+            class="navigation || w-[100%] pr-[1rem] fixed flex items-center justify-between bg-white border-b-4 border-blue-900 p-[15px] pl-[30px]|| md:w-[100%] md:pr-[2rem] md:fixed md:flex md:items-center md:justify-between md:bg-white md:border-b-4 md:border-blue-900 md:p-[10px] md:pl-[30px] ||
+              xl:w-[100%] xl:pr-[20rem] xl:fixed  xl:items-center xl:justify-between xl:bg-white xl:border-b-4 xl:border-blue-900 xl:p-[10px] xl:pl-[30px] ">
+            <div
+                class="n1 flex justify-start items-center ml-1 space-x-5 || md:flex md:justify-start md:items-center md:space-x-5 || xl:flex xl:justify-start xl:items-center xl:space-x-2 ">
+                <div onclick="showmenu()">
+                    <i id="btn_hamburg"
+                        class="fa-solid fa-bars cursor-pointer  text-xl || md:text-black  || xl:text-black xl:hidden "></i>
+                </div>
+
+
+                <div style="padding:10px 14px;"
+                    class="search flex justify-center items-center border-[1px] border-gray-300 rounded-md space-x-5 || md:flex md:justify-center md:items-center md:border-[1px] md:border-gray-300 md:rounded-md md:space-x-5 || xl:flex xl:justify-center xl:items-center xl:border-[1px] xl:border-gray-300 xl:rounded-md xl:space-x-5">
+                    <i class="fa-solid fa-search  text-gray-500 text-sm xl:text-xl"></i>
+                    <input type="text" placeholder="Search"
+                        class=" outline-none text-sm w-[200px] xl:w-[150px] xl:text-lg ">
+                </div>
+            </div>
+            <div
+                class="profile  flex items-center justify-between space-x-2 || md:flex md:items-center md:justify-between md:space-x-3  || xl:flex xl:items-center xl:justify-between xl:space-x-4">
+                <div
+                    class="new-add rounded-full text-sm text-white   || md:py-1 md:text-base md:px-3  || xl:py-1  xl:text-yellow-400 xl:text-lg  xl:px-3 ">
+
+
+                    <a href="form1.html"
+                        class=" hidden  bg-blue-900 text-xs text-white font-bold px-2 py-2 rounded-md || 
+                        xl:bg-blue-900   xl:text-white xl:font-bold xl:px-5 xl:py-2 xl:text-base xl:hover:text-blue-900 xl:hover:outline xl:hover:outline-blue-900 xl:hover:bg-white xl:hover:font-bold">Add
+                        New <i class="fa-solid fa-plus"></i></a>
+
+
+                </div>
+
+                <i class="fa-solid fa-bell cursor-pointer text-2xl xl:text-2xl "></i>
+                <i class="fa-solid fa-message cursor-pointer text-2xl xl:text-2xl "></i>
+                <div class="drop-item xl:flex xl:justify-center xl:items-center   xl:flex-col ">
+                    <div class="img" onclick="MyFunction()">
+                        <img src="shad.png" alt=""
+                            class=" cursor-pointer border-0 border-black w-[50px] h-[50px] object-cover rounded-full || md:w-[40px] md:h-[40px] md:object-cover md:rounded-full  || xl:w-[50px] xl:h-[50px] xl:object-cover xl:rounded-full">
+
+                    </div>
+                    
+                    <div 
+                    class="drop-content rounded-md   bg-blue-900 absolute  top-[60px]  right-[25px] pt-[10px] pb-[10px] pl-[15px] pr-[15px]  mt-[20px]  || xl:pt-[10px] xl:pb-[10px] xl:pl-[15px] xl:pr-[15px]  xl:mt-[20px] xl:top-[51px] xl:right-[20.5rem]  before:absolute before:left-[45%] before:top-[-6px] before:bg-blue-900 before:w-[12px] ">
+                        <div class="NAME font-bold text-white mb-3 mt-3">
+                            <P>RAJPUT MOHAMMADSHAD</P>
+                        </div>
+                
+    
+                    <ul  class="link  ">
+                        <li class="h-[30px] pt-1  py-2  hover:bg-white hover:rounded-md  "><a href="#" class="text-white hover:text-blue-900  ml-5 font-semibold  py-1 "><i class="fa-solid fa-user  inline-block  w-[20px] mr-[5px]"></i> My Profile</a></li>
+                        <li class="h-[30px] pt-1  py-2  hover:bg-white hover:rounded-md  "><a href="#" class="text-white hover:text-blue-900  ml-5 font-semibold  py-1 "><i class="fa-solid fa-pen-to-square inline-block  w-[20px] mr-[5px]"></i>Edit Profile</a></li>
+                        <div class="drivider mt-[10px] mb-[10px] border-b-2 border-b-white"></div>
+                        <li class="h-[30px] pt-1  py-2  hover:bg-white hover:rounded-md  "><a href="fpass.html" class="text-white hover:text-blue-900  ml-5 font-semibold  py-1 "> <i class="fa-solid fa-lock inline-block  w-[20px] mr-[5px]"></i>Change Password</a></li>
+                        <li class="h-[30px] pt-1  py-2  hover:bg-white hover:rounded-md  "><a href="#" class="text-white hover:text-blue-900  ml-5 font-semibold  py-1 "> <i class="fa-solid fa-user-gear inline-block  w-[20px] mr-[5px]"></i>Settings</a></li>
+                        <div class="drivider mt-[10px] mb-[10px] border-b-2 border-b-white"></div>
+
+                        <li class="h-[30px] pt-1  py-2  hover:bg-white hover:rounded-md  "><a href="login.html" class="text-white hover:text-blue-900  ml-5 font-semibold  py-1 "><i class="fa-solid fa-right-from-bracket inline-block  w-[20px] mr-[5px]"></i>Logout</a></li>
+                    </ul>
+                </div>
+                </div>
+
+              
+
+
+
+            </div>
+        </div>
+
+        <h3 style="padding:30px 30px 0 30px;"
+            class="iname text-blue-900 ml-[5px] mr-[10px]  font-bold text-3xl mt-[80px] || md:font-bold md:text-3xl md:mt-[70px] || xl:font-bold xl:text-3xl xl:mt-[70px]">
+            Overview
+        </h3>
+
+        <div style="padding:30px 30px  0px;"
+            class="values  mt-[15px] mr-[15px] mb-[0px] ml-[15px]   justify-between items-center  ||  md:flex md:justify-center md:items-center md:flex-wrap || xl:flex xl:justify-between xl:items-center xl:flex-wrap ">
+            <div style="padding:16px 20px; transition: 0.6s;  "
+                class="val-box bg-white cursor-pointer flex w-[100%] mt-[10px] mr-[20px] mb-[10px] ml-[13px] rounded-md items-center justify-center text-center space-x-7   || md:w-[250px] md:mt-[10px] md:mr-[20px] md:mb-[10px] md:ml-0 md:rounded-md md:flex md:justify-start md:items-center md:space-x-4 || xl:w-[235px]  xl:rounded-md xl:flex xl:justify-start xl:items-center xl:space-x-4  ">
+                <i style="line-height:60px ;"
+                    class="fa-solid fa-users bg-blue-900 text-2xl w-[60px] h-[60px] rounded-full text-center text-white  || md:bg-blue-900 md:text-2xl md:w-[60px] md:h-[60px] md:rounded-full md:text-center  || xl:bg-blue-900  xl:text-2xl xl:w-[60px] xl:h-[60px] xl:rounded-full xl:text-center  "></i>
+                <div>
+                    <span
+                        class=" font-semibold text-lg text-blue-900 || md:font-semibold md:text-sm md:text-blue-900 || xl:font-semibold xl:text-sm xl:text-blue-900">All
+                        Customers</span>
+                    <h3
+                        class=" font-semibold text-2xl text-blue-900 || md:font-semibold md:text-lg md:text-blue-900 || xl:font-semibold xl:text-lg xl:text-blue-900">
+                        100000</h3>
+
+                </div>
+            </div>
+
+            <div style="padding:16px 20px;transition: 0.6s; "
+                class="val-box bg-white cursor-pointer flex w-[100%] mt-[10px]  mr-[20px] mb-[10px] ml-[13px]  rounded-md items-center justify-center text-center space-x-7   || md:w-[250px] md:mt-[10px] md:mr-[20px] md:mb-[10px] md:ml-0 md:rounded-md md:flex md:justify-start md:items-center md:space-x-4 || xl:w-[235px] xl:rounded-md xl:flex xl:justify-start xl:items-center xl:space-x-4 ">
+                <i style="line-height:60px ;"
+                    class="fa-solid fa-circle-check bg-blue-900 text-2xl w-[60px] h-[60px] rounded-full text-center text-white  || md:bg-blue-900 md:text-2xl md:w-[60px] md:h-[60px] md:rounded-full md:text-center  || xl:bg-blue-900 xl:text-2xl xl:w-[60px] xl:h-[60px] xl:rounded-full xl:text-center  "></i>
+                <div>
+                    <span
+                        class=" font-semibold text-lg text-blue-900 || md:font-semibold md:text-sm md:text-blue-900 || xl:font-semibold xl:text-sm xl:text-blue-900">
+                        Paidup </span>
+                    <h3
+                        class=" font-semibold text-2xl text-blue-900 || md:font-semibold md:text-lg md:text-blue-900 || xl:font-semibold xl:text-lg xl:text-blue-900">
+                        100000</h3>
+                </div>
+            </div>
+
+            <div style="padding:16px 20px;transition: 0.6s; "
+                class="val-box bg-white cursor-pointer flex w-[100%] mt-[10px] mr-[20px] mb-[10px] ml-[13px] rounded-md items-center justify-center text-center space-x-7   || md:w-[250px] md:mt-[10px] md:mr-[20px] md:mb-[10px] md:ml-0 md:rounded-md md:flex md:justify-start md:items-center md:space-x-4 || xl:w-[235px] xl:rounded-md xl:flex xl:justify-start xl:items-center xl:space-x-4 ">
+                <i style="line-height:60px ;"
+                    class="fa-solid fa-handshake bg-blue-900 text-2xl w-[60px] h-[60px] rounded-full text-center text-white  || md:bg-blue-900 md:text-2xl md:w-[60px] md:h-[60px] md:rounded-full md:text-center  || xl:bg-blue-900 xl:text-2xl xl:w-[60px] xl:h-[60px] xl:rounded-full xl:text-center  "></i>
+                <div>
+                    <span
+                        class=" font-semibold text-lg text-blue-900 || md:font-semibold md:text-sm md:text-blue-900 || xl:font-semibold xl:text-sm xl:text-blue-900">Outstanding
+                    </span>
+                    <h3
+                        class=" font-semibold text-2xl text-blue-900 || md:font-semibold md:text-lg md:text-blue-900 || xl:font-semibold xl:text-lg xl:text-blue-900">
+                        100000</h3>
+                </div>
+            </div>
+
+            <div style="padding:16px 20px;transition: 0.6s; "
+                class="val-box bg-white cursor-pointer flex w-[100%] mt-[10px] mr-[20px] mb-[10px] ml-[13px] rounded-md items-center justify-center text-center space-x-7   || md:w-[250px] md:mt-[10px] md:mr-[20px] md:mb-[10px] md:ml-0 md:rounded-md md:flex md:justify-start md:items-center md:space-x-4 || xl:w-[235px] xl:rounded-md xl:flex xl:justify-start xl:items-center xl:space-x-4 ">
+                <i style="line-height:60px ;"
+                    class="fa-solid fa-clipboard-check bg-blue-900 text-2xl w-[60px] h-[60px] rounded-full text-center text-white  || md:bg-blue-900 md:text-2xl md:w-[60px] md:h-[60px] md:rounded-full md:text-center  || xl:bg-blue-900 xl:text-2xl xl:w-[60px] xl:h-[60px] xl:rounded-full xl:text-center  "></i>
+
+                <div>
+                    <span
+                        class=" font-semibold text-lg text-blue-900 || md:font-semibold md:text-sm md:text-blue-900 || xl:font-semibold xl:text-sm xl:text-blue-900">One
+                        Month</span>
+                    <h3
+                        class=" font-semibold text-2xl text-blue-900 || md:font-semibold md:text-lg md:text-blue-900 || xl:font-semibold xl:text-lg xl:text-blue-900">
+                        100000</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            class="board w-[94%] mt-[30px] mr-[15px] mb-[30px] ml-[15px] bg-white rounded-md overflow-x-auto || md:w-[92%] md:mt-[30px] md:mr-[15px] md:mb-[30px] md:ml-[30px] md:overflow-x-auto  md:bg-white md:rounded-md || xl:w-[94%]   xl:mt[30px] xl:mr-0 xl:mb-[30px] xl:ml-[30px] xl:overflow-auto xl:bg-white xl:rounded-md ">
+            <table class=" border border-collapse   || md:border-collapse   || xl:w-[100%] xl:border-collapse">
+                <thead>
+                    <tr
+                        class=" border-b-2 border-gray-300  || md:border-b-2 md:border-gray-300 || xl:border-b-2 xl:border-gray-300">
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Date</td>
+                        <td
+                            class=" text-lg uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Full Name</td>
+
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Phone</td>
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Modal Name</td>
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px]  ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Final Amount</td>
+                            
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Paid Amount</td>
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Outs.. Amount</td>
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            status</td>
+                        <td
+                            class=" text-base uppercase font-bold text-left p-[15px] ||md:text-lg md:uppercase md:font-bold md:text-left md:p-[15px] || xl:text-base xl:uppercase xl:font-bold xl:text-center xl:p-[15px]">
+                            Edit</td>
+
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class=" text-center ">
+                        <td style="padding:10px 10px;" class="date  ">
+                            <h5 class=" md:text-lg md:font-normal || xl:text-lg xl:font-normal">07/05/2022</h5>
+                        </td>
+
+                        <td style="padding:10px 0px;">
+                            <div
+                                class="full name cursor-pointer  text-center justify-center space-y-2   || md:flex md:justify-start md:items-center md:text-start || xl:flex xl:gap-3 xl:items-center xl:px-2 xl:pb-2 xl:text-start ">
+
+                                <a href="showall.html"><img src="shad.png" alt=""
+                                        class=" w-[45px] h-[45px] object-cover  rounded-full ml-[30px] || md:w-[40px] md:h-[40px] md:object-cover md:rounded-full md:ml-5 md:mr-[50px] || xl:w-[30px] xl:h-[30px] xl:object-cover xl:rounded-full xl:mr-[10px]">
+                                </a>
+                                <div class="people-de ">
+                                    <h5 class=" text-sm font-normal || md:text-lg  ||xl:text-lg ">Mohammadshad</h5>
+                                </div>
+                            </div>
+
+                        </td>
+
+                        <td style="padding:10px 15px;" class="phone text-center justify-center ">
+                            <div
+                                class=" cursor-pointer  space-y-2   || md:flex md:justify-start md:items-center md:text-start || xl:flex xl:justify-start xl:items-center xl:text-start ">
+                                <h5 class="  md:text-lg md:font-normal || xl:text-lg xl:font-normal">1234567890</h5>
+
+                            </div>
+                        </td>
+
+                        <td style="padding:10px 15px;" class=" modal-name ">
+                            <h5 class=" md:text-lg md:font-normal || xl:text-lg xl:font-normal">Vivo Y55</h5>
+                        </td>
+
+                        <td style="padding:10px 15px;" class="fPrice">
+                            <h5 class=" md:font-normal md:text-lg ||xl:font-normal xl:text-lg ">130000</h5>
+                        </td>
+
+                        <td style="padding:10px 15px;" class="fullPrice">
+                            <h5 class=" md:font-normal md:text-lg ||xl:font-normal xl:text-lg ">130000</h5>
+                        </td>
+                        <td style="padding:10px 15px;" class="outstanding">
+
+                            <h5 class=" md:font-normal md:text-lg ||xl:font-normal xl:text-lg ">130000</h5>
+                        </td>
+                        <td style="padding:10px 15px;" class="status ">
+                            <h5 style="padding:2px 10px"
+                                class="bg-blue-900 text-white rounded-full || xl:inline-block   ">Paid/Unpaid</h5>
+                        </td>
+
+                        <td style="padding:10px 15px;" class="edit">
+                            <a href="edit.html" class=" text-blue-600 xl:text-lg  ">Edit</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- <script src="./deshbord.js"> </script> -->
+    <script>
+        // var btn_hambug = document.getElementById('btn_hamburg');
+
+        function showmenu() {
+            $('#menu').css({ "left": "0", "width": "270px" });
+        }
+        $('document').ready(function () {
+
+            $('#close-btn').click(function () {
+                $('#menu').css("left", "-272px");
+            })
+
+        })
+
+        function MyFunction() {
+            var dropcontent = document.querySelector('.drop-content');
+            dropcontent.classList.toggle('dropdown-toggle');
+        }
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
